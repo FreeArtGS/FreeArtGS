@@ -1,4 +1,4 @@
-# [CVPR 2026] FreeArtGS: Articulated Gaussian Splatting Under Free-moving Scenario
+# FreeArtGS: Articulated Gaussian Splatting Under Free-moving Scenario
 
 <div align="center">
   <p>
