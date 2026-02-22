@@ -14,6 +14,9 @@
   (* indicates equal contribution)
 </div>
 <div align="center">
+  <strong>CVPR 2026</strong>
+</div>
+<div align="center">
 <!-- <a href="https://arxiv.org/abs/2512.19390">
   <img src="https://img.shields.io/badge/arXiv-2512.19390-b31b1b" alt="arXiv">
 </a> -->
