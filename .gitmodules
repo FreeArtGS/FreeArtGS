@@ -1,0 +1,15 @@
+[submodule "reconstruction/nerfstudio"]
+	path = reconstruction/nerfstudio
+	url = git@github.com:TwinAligner/nerfstudio.git
+[submodule "reconstruction/nerfacc_nerfstudio"]
+	path = reconstruction/nerfacc_nerfstudio
+	url = git@github.com:TwinAligner/nerfacc.git
+[submodule "reconstruction/tiny-cuda-nn"]
+	path = reconstruction/tiny-cuda-nn
+	url = git@github.com:FreeArtGS/tiny-cuda-nn.git
+[submodule "tracking/alltracker"]
+	path = tracking/alltracker
+	url = git@github.com:FreeArtGS/alltracker.git
+[submodule "preprocessing/dinov3"]
+	path = preprocessing/dinov3
+	url = git@github.com:facebookresearch/dinov3.git

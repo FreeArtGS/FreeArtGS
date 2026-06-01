@@ -1,0 +1,25 @@
+# Map examples / experiment ids to the PartNet-Mobility joint_id used for evaluation.
+# Exact object_name keys take priority over numeric object-id keys.
+
+joint_ids:
+  "100109": 0
+  "100113": 0
+  "100309": 0
+  "100319": 0
+  "100350": 0
+  "102033": 0
+  "102990": 1
+  "103271": 1
+  "103275": 1
+  "103593": 0
+  "103828": 0
+  "103886": 0
+  "10546": 0
+  "10567": 0
+  "11052": 0
+  "45132": 0
+  "45135": 0
+  "4552": 0
+  "4562": 0
+  "4578": 0
+  "48878": 0

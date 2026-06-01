@@ -1,0 +1,14 @@
+tracker: 'alltracker'
+image_folder: './examples/images'
+framerate: 15
+query_frame: 0
+max_frames: 400
+inference_iters: 4
+window_len: 16
+rate: 8
+conf_thr: 0.5
+bkg_opacity: 0.5
+vstack: false
+hstack: false
+max_resolution: 640
+verbose: false

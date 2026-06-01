@@ -1,0 +1,119 @@
+paths:
+  object_name: usb
+  original_data_dir: examples
+  dataset_root: datasets
+  output_root: outputs
+
+split_eval:
+  enabled: true
+  percentage: 0.05
+  seed: 0
+  subdirs: [rgb, depth, masks, vis]
+
+preprocess:
+  segment_prompt: usb
+  track_sam: true
+  interactive_mask: false
+  skip_segment: true
+  bg_color: white
+  visualize_features: false
+  feature_model_name: dinov3_vitl16
+  feature_image_size: 720
+  feature_patch_size: 16
+  feature_checkpoint_path: checkpoints/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+  pcd_max_depth: 15.0
+
+tracking:
+  debug: false
+  tracker_config: tracking/configs/alltracker.yaml
+  window_size: 8
+  min_depth: 0.1
+  max_depth: 20.0
+  min_inlier_ratio: 0.6
+  min_trajectory_count: 2000
+  no_pingpong: false
+  visibility_threshold: 0.7
+  confidence_threshold: 0.7
+  loss_type: normalized_huber
+  init_method: kmeans
+  seg_fill_method: kmeans
+  lr_T: 0.0001
+  lr_w: 0.01
+  filter_ratio_threshold: 0.15
+  joint_optimize_epochs: 200
+  solve_window_epochs: 100
+  neighbor_selection_method: radius
+  knn_k: 3000
+  knn_radius: 0.3
+  downscale_factor: 2
+  w_s: 10.0
+  w_init: 20.0
+  w_p: 0.0
+  w_m: 200.0
+  w_e: -0.01
+
+tracking_postprocess:
+  segmap_video_fps: 10
+
+icp:
+  erode_kernel_size: 3
+  erode_iterations: 1
+  voxel_size: 0
+  sample_points: 100000
+  local_map_window: 8
+  local_map_max_points: 50000
+  init_fallback_fitness: 0.9
+  hybrid_plane_weight: 1.0
+  hybrid_point_weight: 0.2
+  hybrid_damping: 0.0
+  max_frame_translation: 2.0
+  max_frame_rotation_deg: 20.0
+  global_opt: true
+  loop_interval: 0
+  min_points_per_pcd: 50
+  bad_match_fitness: 0.5
+  icp_debug: false
+
+train_parts:
+  enable_frame_filtering: false
+  penalty_scale: 1.0
+  trans_penalty_factor: 0.01
+  rot_penalty_factor: 0.001
+  max_num_iterations: 30000
+  vis: tensorboard
+  fg_mask_lambda: 1.0
+  sensor_depth_lambda: 10.0
+  sh_degree: 0
+
+twopart_blend:
+  penalty_scale: 1.0
+  trans_penalty_factor: 0.01
+  rot_penalty_factor: 0.001
+  max_num_iterations: 30000
+  vis: tensorboard
+  enable_frame_filtering: false
+  obj_pose_opt_enabled: true
+  trainable_weights: true
+  camera_optimizer_mode: SO3xR3
+  enable_gs_refinement: false
+  fg_mask_lambda: 1.0
+  sensor_depth_lambda: 10.0
+  sh_degree: 0
+  obj_trans_l2_penalty: 0.0
+  obj_rot_l2_penalty: 0.0
+
+splatfacto_art:
+  enable_refine: true
+  penalty_scale: 1.0
+  trans_penalty_factor: 0.01
+  rot_penalty_factor: 0.001
+  max_num_iterations: 30000
+  vis: tensorboard
+  optimize_joint_axis: true
+  optimize_joint_origin: true
+  optimize_joint_params: true
+  origin_adjustment_weight: 0.0
+  axis_adjustment_weight: 0.0
+  fg_mask_lambda: 1.0
+  sh_degree: 0
+  sensor_depth_lambda: 1.0
